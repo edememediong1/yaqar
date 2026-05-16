@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-burgundy: #5A181E;
+  --color-burgundy-dark: #3a0d11;
+  --color-champagne: #D4AF37;
+  --color-champagne-soft: #E4D4B6;
+  --color-champagne-light: #FCF7F0;
+  --color-rose: #D8A5A5;
+  --color-ivory: #F8F6F0;
+  --color-black-elegant: #0A0A0A;
+
+  --font-sans: var(--font-inter), sans-serif;
+  --font-serif: var(--font-cormorant), serif;
+  --font-display: var(--font-playfair), serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-ivory);
+    color: var(--color-black-elegant);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+::selection {
+  background-color: var(--color-champagne-soft);
+  color: var(--color-burgundy-dark);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.split-line {
+  overflow: hidden;
+}
+.split-line-inner {
+  display: inline-block;
+}
+
+/* Lenis smooth scroll */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
