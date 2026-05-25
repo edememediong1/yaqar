@@ -14,7 +14,7 @@ const GIFTS = [
     title: "Solar Standing Fan",
     description: "Reliable cooling during power outages and a practical everyday essential.",
     price: "₦105,000",
-    image: "https://images.unsplash.com/photo-1565363887754-0ebcc82987fb?q=80&w=2000&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1618354691456-cc1a7cda9845?q=80&w=2000&auto=format&fit=crop",
     status: "available",
   },
   {
@@ -30,7 +30,7 @@ const GIFTS = [
     title: "Double Door Refrigerator",
     description: "A modern inverter fridge for preserving food and home comfort.",
     price: "₦350,000",
-    image: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?q=80&w=2000&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?q=80&w=2000&auto=format&fit=crop",
     status: "available",
   },
   {
@@ -38,7 +38,7 @@ const GIFTS = [
     title: "55” Smart TV",
     description: "Perfect for entertainment, hosting, and family movie nights.",
     price: "₦350,000",
-    image: "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=2000&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?q=80&w=2000&auto=format&fit=crop",
     status: "available",
   },
   {
@@ -46,7 +46,7 @@ const GIFTS = [
     title: "Automatic Washing Machine",
     description: "A major convenience for a new home.",
     price: "₦420,000",
-    image: "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=2000&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1626806819282-2c1dc01a5e0c?q=80&w=2000&auto=format&fit=crop",
     status: "available",
   },
   {
@@ -54,7 +54,7 @@ const GIFTS = [
     title: "Workspace Setup",
     description: "A complete productivity setup including ergonomic chair, desk, monitor, and UPS.",
     price: "₦650,000",
-    image: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2000&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=2000&auto=format&fit=crop",
     status: "available",
   },
   {
@@ -62,7 +62,7 @@ const GIFTS = [
     title: "Gas Cooker + Oven Set",
     description: "One of the most useful and timeless wedding gifts.",
     price: "₦350,000",
-    image: "https://images.unsplash.com/photo-1585002130383-a9d5d852a420?q=80&w=2000&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=2000&auto=format&fit=crop",
     status: "available",
   },
   {
@@ -70,7 +70,7 @@ const GIFTS = [
     title: "1.5HP Inverter Air Conditioner",
     description: "Energy-efficient cooling for comfort in Nigeria’s climate.",
     price: "₦480,000",
-    image: "https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=2000&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1527018601619-a508a2be00cd?q=80&w=2000&auto=format&fit=crop",
     status: "available",
   },
   {
@@ -78,7 +78,7 @@ const GIFTS = [
     title: "Dining Table Set (4–6 Seater)",
     description: "A stylish setup for meals, hosting, and family gatherings.",
     price: "₦300,000",
-    image: "https://images.unsplash.com/photo-1604578762246-41134e37f9cc?q=80&w=2000&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1617806118233-18e1c12085c7?q=80&w=2000&auto=format&fit=crop",
     status: "available",
   }
 ];
@@ -145,26 +145,15 @@ export default function RegistryPage() {
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="flex-1">
               <h2 className="font-display text-3xl md:text-5xl mb-4">Honeymoon Fund Contribution</h2>
-              <p className="font-serif text-ivory/80 text-lg mb-8">
+              <p className="font-serif text-ivory/80 text-lg">
                 Guests can contribute any amount toward our honeymoon experience. Help us create unforgettable memories!
               </p>
-              
-              <div className="w-full h-2 bg-ivory/20 rounded-full overflow-hidden mb-4">
-                <motion.div 
-                  className="h-full bg-champagne rounded-full"
-                  initial={{ width: 0 }}
-                  whileInView={{ width: "35%" }}
-                  transition={{ duration: 2, ease: "easeOut" }}
-                  viewport={{ once: true }}
-                />
-              </div>
-              <div className="flex justify-between font-sans text-xs tracking-widest text-champagne">
-                <span>OPEN FUND</span>
-                <span>ANY AMOUNT</span>
-              </div>
             </div>
             
-            <button className="bg-champagne text-black-elegant px-10 py-5 rounded-full font-sans text-xs uppercase tracking-[0.15em] hover:bg-ivory hover:scale-105 transition-all duration-300 shrink-0">
+            <button 
+              onClick={() => setSelectedGift(0)} // Arbitrary ID for honeymoon
+              className="bg-champagne text-black-elegant px-10 py-5 rounded-full font-sans text-xs uppercase tracking-[0.15em] hover:bg-ivory hover:scale-105 transition-all duration-300 shrink-0"
+            >
               Contribute
             </button>
           </div>
@@ -220,7 +209,7 @@ export default function RegistryPage() {
 
       {/* Payment Modal */}
       <AnimatePresence>
-        {selectedGift && (
+        {selectedGift !== null && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
             <motion.div 
               initial={{ opacity: 0 }}

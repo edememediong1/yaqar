@@ -39,8 +39,8 @@ export function Navbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           isScrolled
-            ? "bg-black-elegant/80 backdrop-blur-md py-4 shadow-lg border-b border-champagne-soft/10 text-ivory"
-            : "bg-transparent py-6 text-ivory"
+            ? "bg-ivory/95 backdrop-blur-md py-4 shadow-lg text-black-elegant border-b border-black-elegant/10"
+            : "bg-transparent py-6 text-ivory drop-shadow-sm"
         )}
       >
         <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
@@ -73,7 +73,12 @@ export function Navbar() {
                 className={cn(
                   "font-sans text-xs tracking-[0.1em] uppercase transition-all duration-300",
                   link.name === "RSVP"
-                    ? "bg-champagne text-black-elegant px-6 py-2.5 rounded-full hover:bg-ivory hover:scale-105"
+                    ? cn(
+                        "px-6 py-2.5 rounded-full hover:scale-105",
+                        isScrolled
+                          ? "bg-burgundy text-ivory hover:bg-black-elegant"
+                          : "bg-champagne text-black-elegant hover:bg-ivory"
+                      )
                     : "hover:text-champagne"
                 )}
               >

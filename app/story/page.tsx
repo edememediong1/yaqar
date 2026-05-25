@@ -8,22 +8,22 @@ import Image from "next/image";
 
 const STORY_STEPS = [
   {
-    year: "2018",
+    year: "2022",
     title: "How We Met",
-    description: "It started as a simple hello. We bumped into each other at a mutual friend's gathering. A short conversation turned into hours of talking about everything and nothing.",
+    description: "Emediong met Anne for the first time on 1st October 2022, Nigeria's Independence Day, through a picture someone shared on a WhatsApp status.",
     image: "https://images.unsplash.com/photo-1522529599102-1b714c6474b5?q=80&w=1000&auto=format&fit=crop"
   },
   {
-    year: "2020",
-    title: "The First Date",
-    description: "Our first official date was a coffee run that turned into a walk across the city until sunset. Looking back, we both knew something extraordinary had just begun.",
+    year: "2023",
+    title: "Official Beginning",
+    description: "We started our relationship officially on October 12, 2023. We received a word that day: \"I know the thoughts that I think towards you, thoughts of peace and not of evil, to give you an expected end.\"",
     image: "https://images.unsplash.com/photo-1555529733-0e670560f7e1?q=80&w=1000&auto=format&fit=crop"
   },
   {
-    year: "2023",
+    year: "2026",
     title: "The Proposal",
-    description: "Under a canopy of stars on a quiet beach, Emediong got down on one knee. Through tears of joy, Anne said yes to forever. It was intimate, perfect, and deeply ours.",
-    image: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=1000&auto=format&fit=crop"
+    description: "On April 11th, 2026, at Jabi, Abuja, Emediong got down on one knee. Through tears of joy, Anne said yes to forever. It was intimate, perfect, and deeply ours.",
+    image: "/ring.jpeg"
   },
   {
     year: "2026",
@@ -107,7 +107,7 @@ export default function StoryPage() {
           <div key={idx} className="timeline-row relative flex flex-col md:flex-row items-center justify-between mb-32 z-10">
             <div className={`w-full md:w-[45%] flex flex-col ${idx % 2 === 0 ? "md:items-end md:text-right" : "md:order-last md:items-start md:text-left"} mb-8 md:mb-0 pl-10 md:pl-0`}>
               <div className="timeline-img w-full overflow-hidden rounded-2xl aspect-[4/3] relative">
-                 <Image src={step.image} alt={step.title} fill className="object-cover" referrerPolicy="no-referrer" />
+                 <Image src={step.image} alt={step.title} fill className="object-cover object-top" referrerPolicy="no-referrer" />
               </div>
             </div>
 
